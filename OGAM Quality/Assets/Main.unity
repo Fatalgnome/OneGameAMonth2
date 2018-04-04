@@ -161,6 +161,11 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 50258954180374314, guid: 017885b1083641f4190f4388f8063fca,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 017885b1083641f4190f4388f8063fca, type: 2}
   m_IsPrefabParent: 0
@@ -367,6 +372,7 @@ GameObject:
   - component: {fileID: 1311280394}
   - component: {fileID: 1311280393}
   - component: {fileID: 1311280397}
+  - component: {fileID: 1311280398}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -465,6 +471,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
+--- !u!50 &1311280398
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311280392}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1316271558
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +685,10 @@ Prefab:
     - target: {fileID: 1731910806899668, guid: 2f8d51f49191855488e340aaba8c9b9d, type: 2}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819040798185720, guid: 2f8d51f49191855488e340aaba8c9b9d, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2136.047
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f8d51f49191855488e340aaba8c9b9d, type: 2}

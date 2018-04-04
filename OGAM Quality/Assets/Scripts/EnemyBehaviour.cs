@@ -14,8 +14,9 @@ public class EnemyBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    random = Random.Range(0, 1);
-	    if (random == 0)
+	    random = Random.Range(0, 2);
+
+        if (random == 1)
 	    {
 	        direction = Vector2.left;
 	    }
@@ -46,4 +47,6 @@ public class EnemyBehaviour : MonoBehaviour
 
         }
     }
+
+
 }
