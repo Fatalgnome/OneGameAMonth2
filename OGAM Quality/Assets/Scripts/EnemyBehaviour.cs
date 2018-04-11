@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
@@ -7,10 +8,14 @@ public class EnemyBehaviour : MonoBehaviour
     private int health;
 
     public float Speed;
+    public int CircleRadius;
 
+    private bool closeToPlayer = false;
     private Vector2 direction;
 
     private int random;
+
+    private Collider2D hitColliders;
 	// Use this for initialization
 	void Start ()
 	{
@@ -28,9 +33,26 @@ public class EnemyBehaviour : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-    {  
-		transform.Translate(direction * Speed * Time.deltaTime);
-	}
+    {
+        if (closeToPlayer == false)
+        {
+           transform.Translate(direction * Speed * Time.deltaTime);
+        }
+
+
+        hitColliders = Physics2D.OverlapCircle(transform.position, CircleRadius);
+
+        if (hitColliders.gameObject.tag == "Player")
+        {
+            closeToPlayer = true;
+        }
+
+        if(hitColliders.gameObject.tag != "Player")
+        {
+            closeToPlayer = false;
+        }
+
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
